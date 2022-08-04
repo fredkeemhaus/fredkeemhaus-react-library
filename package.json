@@ -1,6 +1,6 @@
 {
   "name": "fredkeemhaus-react-library",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "peerDependencies": {
     "react": "^18.2.0",
