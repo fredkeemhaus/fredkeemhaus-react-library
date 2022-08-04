@@ -1,10 +1,14 @@
-import { CustomButton } from "fredkeemhaus-react-library";
+import React from "react";
+// import Calendar from "./components/Calendar";
+import { Calendar } from "fredkeemhaus-react-library";
 
 function App() {
+  const [range, setRange] = React.useState();
+
   return (
-    <CustomButton onClick={() => alert(1)} bgColor={"blue"} fontColor={"white"}>
-      테스트 버튼!!
-    </CustomButton>
+    <div>
+      <Calendar selected={range} onSelect={setRange} mode={"range"} />
+    </div>
   );
 }
 
