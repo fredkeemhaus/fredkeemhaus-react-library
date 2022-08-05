@@ -20,7 +20,7 @@ yarn add fredkeemhaus-react-library
 # Functions
 
 - [Calendar (single, multiple)](#calendar)
-- [Download to CSV](#cownload-to-csv)
+- [Download to CSV](#download-to-csv)
 
 # Calendar
 
