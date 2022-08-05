@@ -1,6 +1,5 @@
 import React from "react";
-import { Calendar } from "fredkeemhaus-react-library";
-import DownloadToCSV from "./components/DownloadToCSV";
+import { Calendar, DownloadToCSV } from "fredkeemhaus-react-library";
 
 function App() {
   const [startDate, setStartDate] = React.useState(() => new Date());
