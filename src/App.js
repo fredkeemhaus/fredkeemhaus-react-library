@@ -1,6 +1,6 @@
 import React from "react";
-import Calendar from "./components/Calendar";
-// import { Calendar } from "fredkeemhaus-react-library";
+// import Calendar from "./components/Calendar";
+import { Calendar } from "fredkeemhaus-react-library";
 
 function App() {
   const [startDate, setStartDate] = React.useState(new Date());

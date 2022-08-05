@@ -1,6 +1,8 @@
 {
   "name": "fredkeemhaus-react-library",
-  "version": "0.1.5",
+  "version": "0.1.6",
+  "author": "fredkeemhaus",
+  "license": "MIT",
   "private": false,
   "peerDependencies": {
     "react": "^18.2.0",
