@@ -21,51 +21,62 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Calendar = function Calendar(_ref) {
-  var _ref$minDate = _ref.minDate,
-      minDate = _ref$minDate === void 0 ? "" : _ref$minDate,
-      startDate = _ref.startDate,
-      _ref$startDateLabel = _ref.startDateLabel,
-      startDateLabel = _ref$startDateLabel === void 0 ? "" : _ref$startDateLabel,
-      endDate = _ref.endDate,
-      _ref$endDateLabel = _ref.endDateLabel,
-      endDateLabel = _ref$endDateLabel === void 0 ? "" : _ref$endDateLabel,
-      onChangeStartDate = _ref.onChangeStartDate,
-      onChangeEndDate = _ref.onChangeEndDate,
-      dateFormat = _ref.dateFormat,
-      _ref$showTimeSelect = _ref.showTimeSelect,
-      showTimeSelect = _ref$showTimeSelect === void 0 ? false : _ref$showTimeSelect,
-      _ref$timeFormat = _ref.timeFormat,
-      timeFormat = _ref$timeFormat === void 0 ? false : _ref$timeFormat,
-      _ref$timeIntervals = _ref.timeIntervals,
-      timeIntervals = _ref$timeIntervals === void 0 ? false : _ref$timeIntervals;
-  return /*#__PURE__*/_react.default.createElement(Container, null, startDateLabel && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, startDateLabel)), /*#__PURE__*/_react.default.createElement(_reactDatepicker.default, {
-    selected: startDate,
+var Calendar = /*#__PURE__*/_react.default.forwardRef(function (props, ref) {
+  var selected = props.selected,
+      _props$minDate = props.minDate,
+      minDate = _props$minDate === void 0 ? "" : _props$minDate,
+      _props$startDate = props.startDate,
+      startDate = _props$startDate === void 0 ? "" : _props$startDate,
+      setStartDate = props.setStartDate,
+      _props$endDate = props.endDate,
+      endDate = _props$endDate === void 0 ? "" : _props$endDate,
+      setEndDate = props.setEndDate,
+      dateFormat = props.dateFormat,
+      _props$withPortal = props.withPortal,
+      withPortal = _props$withPortal === void 0 ? false : _props$withPortal,
+      _props$showTimeSelect = props.showTimeSelect,
+      showTimeSelect = _props$showTimeSelect === void 0 ? false : _props$showTimeSelect,
+      _props$timeFormat = props.timeFormat,
+      timeFormat = _props$timeFormat === void 0 ? false : _props$timeFormat,
+      _props$timeIntervals = props.timeIntervals,
+      timeIntervals = _props$timeIntervals === void 0 ? false : _props$timeIntervals,
+      _props$customInput = props.customInput,
+      customInput = _props$customInput === void 0 ? false : _props$customInput,
+      className = props.className;
+
+  var _onChange = _react.default.useCallback(function (date) {
+    if (!ref.current.props.endDate) {
+      setStartDate(date);
+    } else {
+      setEndDate(date);
+    }
+  }, [ref, setEndDate, setStartDate]);
+
+  _react.default.useEffect(function () {
+    _onChange(startDate);
+  }, [_onChange, ref, startDate]);
+
+  return /*#__PURE__*/_react.default.createElement(Container, null, /*#__PURE__*/_react.default.createElement(_reactDatepicker.default, {
+    className: className,
+    customInput: customInput,
+    selected: selected,
+    startDate: startDate,
+    endDate: endDate,
+    ref: ref,
     onChange: function onChange(date) {
-      return onChangeStartDate(date);
+      return _onChange(date);
     },
     minDate: minDate,
-    startDate: startDate,
     dateFormat: dateFormat,
-    withPortal: true,
+    withPortal: withPortal,
     locale: _ko.default,
     showTimeSelect: showTimeSelect,
     timeFormat: timeFormat,
     timeIntervals: timeIntervals
-  }), endDate && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, endDateLabel || "-")), /*#__PURE__*/_react.default.createElement(_reactDatepicker.default, {
-    selected: endDate,
-    onChange: function onChange(date) {
-      return onChangeEndDate(date);
-    },
-    minDate: startDate,
-    endDate: endDate,
-    dateFormat: dateFormat,
-    withPortal: true,
-    locale: _ko.default
-  })));
-};
+  }));
+});
 
-var Container = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n"])));
+var Container = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  .react-datepicker-wrapper {\n    width: auto;\n  }\n"])));
 
 var _default = /*#__PURE__*/_react.default.memo(Calendar);
 

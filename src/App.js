@@ -1,7 +1,6 @@
-import { parseISO } from "date-fns";
 import React from "react";
-import Calendar from "./components/Calendar";
-// import { Calendar } from "fredkeemhaus-react-library";
+import { Calendar } from "fredkeemhaus-react-library";
+import DownloadToCSV from "./components/DownloadToCSV";
 
 function App() {
   const [startDate, setStartDate] = React.useState(() => new Date());
@@ -9,6 +8,18 @@ function App() {
 
   const startRef = React.useRef(null);
   const endRef = React.useRef(null);
+
+  const headers = [
+    { label: "First Name", key: "firstname" },
+    { label: "Last Name", key: "lastname" },
+    { label: "Email", key: "email" },
+  ];
+
+  const data = [
+    { firstname: "Ahmed", lastname: "Tomi", email: "ah@smthing.co.com" },
+    { firstname: "Raed", lastname: "Labes", email: "rl@smthing.co.com" },
+    { firstname: "Yezzi", lastname: "Min l3b", email: "ymin@cocococo.com" },
+  ];
 
   return (
     <div>
@@ -30,6 +41,12 @@ function App() {
         ref={endRef}
         dateFormat={"yyyy-MM-dd"}
         minDate={startDate}
+      />
+      <DownloadToCSV
+        buttonName={"download me"}
+        filename={"CJLogistics"}
+        headers={headers}
+        data={data}
       />
     </div>
   );

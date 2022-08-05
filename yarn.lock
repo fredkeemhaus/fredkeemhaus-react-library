@@ -4632,17 +4632,17 @@
   "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz"
   "version" "4.2.0"
 
-"fredkeemhaus-react-library@^0.1.4", "fredkeemhaus-react-library@^0.1.6":
-  "integrity" "sha512-Llf9IZe+Fb1RhVtGn0NCSIAgJY6R+9kaxCWQ323eknafM/tI5tQNdTtUZufcmV258Ev44iV5RuUHX6qBC0XmCA=="
-  "resolved" "https://registry.npmjs.org/fredkeemhaus-react-library/-/fredkeemhaus-react-library-0.1.6.tgz"
-  "version" "0.1.6"
+"fredkeemhaus-react-library@^0.1.7":
+  "integrity" "sha512-WLh0yCti+j4Qq56SgJECS0xT+QHWzGetdXVzWMVQGyDQ9NL/1+fKMFyvJ2FzUqVWiEvqPk8V+g8gzIZroaEt9g=="
+  "resolved" "https://registry.npmjs.org/fredkeemhaus-react-library/-/fredkeemhaus-react-library-0.1.7.tgz"
+  "version" "0.1.7"
   dependencies:
     "@testing-library/jest-dom" "^5.16.4"
     "@testing-library/react" "^13.3.0"
     "@testing-library/user-event" "^13.5.0"
     "date-fns" "^2.29.1"
-    "fredkeemhaus-react-library" "^0.1.4"
     "react-datepicker" "^4.8.0"
+    "react-flatpickr" "^3.10.13"
     "styled-components" "^5.3.5"
     "web-vitals" "^2.1.4"
 
@@ -7521,6 +7521,11 @@
     "raf" "^3.4.1"
     "regenerator-runtime" "^0.13.9"
     "whatwg-fetch" "^3.6.2"
+
+"react-csv@^2.2.2":
+  "integrity" "sha512-RG5hOcZKZFigIGE8LxIEV/OgS1vigFQT4EkaHeKgyuCbUAu9Nbd/1RYq++bJcJJ9VOqO/n9TZRADsXNDR4VEpw=="
+  "resolved" "https://registry.npmjs.org/react-csv/-/react-csv-2.2.2.tgz"
+  "version" "2.2.2"
 
 "react-datepicker@^4.8.0":
   "integrity" "sha512-u69zXGHMpxAa4LeYR83vucQoUCJQ6m/WBsSxmUMu/M8ahTSVMMyiyQzauHgZA2NUr9y0FUgOAix71hGYUb6tvg=="
