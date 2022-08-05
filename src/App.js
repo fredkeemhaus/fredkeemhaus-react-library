@@ -3,12 +3,25 @@ import Calendar from "./components/Calendar";
 // import { Calendar } from "fredkeemhaus-react-library";
 
 function App() {
-  // const [range, setRange] = React.useState();
+  const [startDate, setStartDate] = React.useState(new Date());
+  const [endDate, setEndDate] = React.useState();
+
+  const onChangeStartDate = (date) => setStartDate(date);
+  const onChangeEndDate = React.useCallback((date) => setEndDate(date), []);
+
+  React.useEffect(() => {
+    onChangeEndDate(startDate);
+  }, [onChangeEndDate, startDate]);
 
   return (
     <div>
-      <Calendar />
-      {/* <Calendar selected={range} onSelect={setRange} mode={"range"} /> */}
+      <Calendar
+        startDate={startDate}
+        endDate={endDate}
+        onChangeEndDate={onChangeEndDate}
+        onChangeStartDate={onChangeStartDate}
+        minDate={startDate}
+      />
     </div>
   );
 }
