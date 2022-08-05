@@ -16,10 +16,12 @@ function App() {
   return (
     <div>
       <Calendar
+        startDateLabel={""}
         startDate={startDate}
         endDate={endDate}
         onChangeEndDate={onChangeEndDate}
         onChangeStartDate={onChangeStartDate}
+        dateFormat={"yyyy-MM-dd"}
         minDate={startDate}
       />
     </div>

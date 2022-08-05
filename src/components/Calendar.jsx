@@ -1,27 +1,35 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-
+import styled from "styled-components";
 import "react-datepicker/dist/react-datepicker.css";
 import ko from "date-fns/locale/ko";
 
 const Calendar = ({
   minDate = "",
   startDate,
+  startDateLabel = "",
   endDate,
+  endDateLabel = "",
   onChangeStartDate,
   onChangeEndDate,
+  dateFormat,
   showTimeSelect = false,
   timeFormat = false,
   timeIntervals = false,
 }) => {
   return (
-    <div style={{ display: "flex" }}>
+    <Container>
+      {startDateLabel && (
+        <div>
+          <p>{startDateLabel}</p>
+        </div>
+      )}
       <DatePicker
         selected={startDate}
         onChange={(date) => onChangeStartDate(date)}
         minDate={minDate}
         startDate={startDate}
-        dateFormat="yyyy-MM-dd"
+        dateFormat={dateFormat}
         withPortal
         locale={ko}
         showTimeSelect={showTimeSelect}
@@ -29,17 +37,28 @@ const Calendar = ({
         timeIntervals={timeIntervals}
       />
       {endDate && (
-        <DatePicker
-          selected={endDate}
-          onChange={(date) => onChangeEndDate(date)}
-          minDate={startDate}
-          endDate={endDate}
-          dateFormat="yyyy-MM-dd"
-          withPortal
-          locale={ko}
-        />
+        <React.Fragment>
+          <div>
+            <p>{endDateLabel || "-"}</p>
+          </div>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => onChangeEndDate(date)}
+            minDate={startDate}
+            endDate={endDate}
+            dateFormat={dateFormat}
+            withPortal
+            locale={ko}
+          />
+        </React.Fragment>
       )}
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export default React.memo(Calendar);
