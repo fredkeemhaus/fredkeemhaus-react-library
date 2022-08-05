@@ -2655,7 +2655,7 @@
   "resolved" "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   "version" "2.1.2"
 
-"autoprefixer@^10.4.7":
+"autoprefixer@^10.4.7", "autoprefixer@^10.4.8":
   "integrity" "sha512-75Jr6Q/XpTqEf6D2ltS5uMewJIx5irCU1oBYJrWjFenq/m12WRRrz6g15L1EIoYvPLXTbEry7rDOwrcYNj77xw=="
   "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.8.tgz"
   "version" "10.4.8"
@@ -4579,6 +4579,11 @@
     "flatted" "^3.1.0"
     "rimraf" "^3.0.2"
 
+"flatpickr@^4.6.2":
+  "integrity" "sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw=="
+  "resolved" "https://registry.npmjs.org/flatpickr/-/flatpickr-4.6.13.tgz"
+  "version" "4.6.13"
+
 "flatted@^3.1.0":
   "integrity" "sha512-0sQoMh9s0BYsm+12Huy/rkKxVu4R1+r96YX5cG44rHV0pQ6iC3Q+mkoMFaGWObMFYQxCVT+ssG1ksneA2MI9KQ=="
   "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.6.tgz"
@@ -4627,16 +4632,18 @@
   "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz"
   "version" "4.2.0"
 
-"fredkeemhaus-react-library@^0.1.4":
-  "integrity" "sha512-D9oq3xEFGUBACivZ+70ckZkXM1R9zM9UM/pL7IS+WbFnvZX2sUXqwlmpWB1cCOSrO5LhQ1w6pGdiB/TaZKuK2w=="
-  "resolved" "https://registry.npmjs.org/fredkeemhaus-react-library/-/fredkeemhaus-react-library-0.1.4.tgz"
-  "version" "0.1.4"
+"fredkeemhaus-react-library@^0.1.4", "fredkeemhaus-react-library@^0.1.6":
+  "integrity" "sha512-Llf9IZe+Fb1RhVtGn0NCSIAgJY6R+9kaxCWQ323eknafM/tI5tQNdTtUZufcmV258Ev44iV5RuUHX6qBC0XmCA=="
+  "resolved" "https://registry.npmjs.org/fredkeemhaus-react-library/-/fredkeemhaus-react-library-0.1.6.tgz"
+  "version" "0.1.6"
   dependencies:
     "@testing-library/jest-dom" "^5.16.4"
     "@testing-library/react" "^13.3.0"
     "@testing-library/user-event" "^13.5.0"
     "date-fns" "^2.29.1"
+    "fredkeemhaus-react-library" "^0.1.4"
     "react-datepicker" "^4.8.0"
+    "styled-components" "^5.3.5"
     "web-vitals" "^2.1.4"
 
 "fresh@0.5.2":
@@ -7420,7 +7427,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.7.2", "prop-types@^15.8.1":
+"prop-types@^15.5.10", "prop-types@^15.7.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -7575,6 +7582,14 @@
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   "version" "3.2.0"
 
+"react-flatpickr@^3.10.13":
+  "integrity" "sha512-4m+K1K8jhvRFI8J/AHmQfA5hLALzhebEtEK8mLevXjX24MV3u502crzBn+EGFIBOfNUtrL5PId9FsGwgtuz/og=="
+  "resolved" "https://registry.npmjs.org/react-flatpickr/-/react-flatpickr-3.10.13.tgz"
+  "version" "3.10.13"
+  dependencies:
+    "flatpickr" "^4.6.2"
+    "prop-types" "^15.5.10"
+
 "react-is@^16.13.1", "react-is@^16.7.0", "react-is@>= 16.8.0":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -7663,7 +7678,7 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react@^15.5.x || ^16.x || ^17.x || ^18.x", "react@^16.8.0 || ^17 || ^18", "react@^16.9.0 || ^17 || ^18", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0":
+"react@^15.5.x || ^16.x || ^17.x || ^18.x", "react@^16.8.0 || ^17 || ^18", "react@^16.9.0 || ^17 || ^18", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0", "react@>=16, <=18":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -8554,7 +8569,7 @@
   "resolved" "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz"
   "version" "3.2.4"
 
-"tailwindcss@^3.0.2":
+"tailwindcss@^3.0.2", "tailwindcss@^3.1.7":
   "integrity" "sha512-r7mgumZ3k0InfVPpGWcX8X/Ut4xBfv+1O/+C73ar/m01LxGVzWvPxF/w6xIUPEztrCoz7axfx0SMdh8FH8ZvRQ=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.7.tgz"
   "version" "3.1.7"

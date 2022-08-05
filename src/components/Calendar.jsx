@@ -13,9 +13,12 @@ const Calendar = ({
   onChangeStartDate,
   onChangeEndDate,
   dateFormat,
+  withPortal = false,
   showTimeSelect = false,
   timeFormat = false,
   timeIntervals = false,
+  customInput = false,
+  className,
 }) => {
   return (
     <Container>
@@ -25,12 +28,14 @@ const Calendar = ({
         </div>
       )}
       <DatePicker
+        className={className}
+        customInput={customInput}
         selected={startDate}
         onChange={(date) => onChangeStartDate(date)}
         minDate={minDate}
         startDate={startDate}
         dateFormat={dateFormat}
-        withPortal
+        withPortal={withPortal}
         locale={ko}
         showTimeSelect={showTimeSelect}
         timeFormat={timeFormat}
@@ -42,12 +47,14 @@ const Calendar = ({
             <p>{endDateLabel || "-"}</p>
           </div>
           <DatePicker
+            className={className}
+            customInput={customInput}
             selected={endDate}
             onChange={(date) => onChangeEndDate(date)}
             minDate={startDate}
             endDate={endDate}
             dateFormat={dateFormat}
-            withPortal
+            withPortal={withPortal}
             locale={ko}
           />
         </React.Fragment>
@@ -59,6 +66,10 @@ const Calendar = ({
 const Container = styled.div`
   display: flex;
   align-items: center;
+
+  .react-datepicker-wrapper {
+    width: auto;
+  }
 `;
 
 export default React.memo(Calendar);

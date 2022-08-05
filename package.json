@@ -14,8 +14,9 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "date-fns": "^2.29.1",
-    "fredkeemhaus-react-library": "^0.1.4",
+    "fredkeemhaus-react-library": "^0.1.6",
     "react-datepicker": "^4.8.0",
+    "react-flatpickr": "^3.10.13",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
@@ -49,7 +50,10 @@
     "@babel/cli": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
     "@babel/preset-react": "^7.18.6",
-    "cross-env": "^7.0.3"
+    "autoprefixer": "^10.4.8",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7"
   },
   "main": "dist/index.js",
   "files": [
