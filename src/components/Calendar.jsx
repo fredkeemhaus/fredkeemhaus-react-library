@@ -4,36 +4,49 @@ import styled from "styled-components";
 import "react-datepicker/dist/react-datepicker.css";
 import ko from "date-fns/locale/ko";
 
-const Calendar = ({
-  minDate = "",
-  startDate,
-  startDateLabel = "",
-  endDate,
-  endDateLabel = "",
-  onChangeStartDate,
-  onChangeEndDate,
-  dateFormat,
-  withPortal = false,
-  showTimeSelect = false,
-  timeFormat = false,
-  timeIntervals = false,
-  customInput = false,
-  className,
-}) => {
+const Calendar = React.forwardRef((props, ref) => {
+  const {
+    selected,
+    minDate = "",
+    startDate = "",
+    setStartDate,
+    endDate = "",
+    setEndDate,
+    dateFormat,
+    withPortal = false,
+    showTimeSelect = false,
+    timeFormat = false,
+    timeIntervals = false,
+    customInput = false,
+    className,
+  } = props;
+
+  const onChange = React.useCallback(
+    (date) => {
+      if (!ref.current.props.endDate) {
+        setStartDate(date);
+      } else {
+        setEndDate(date);
+      }
+    },
+    [ref, setEndDate, setStartDate]
+  );
+
+  React.useEffect(() => {
+    onChange(startDate);
+  }, [onChange, ref, startDate]);
+
   return (
     <Container>
-      {startDateLabel && (
-        <div>
-          <p>{startDateLabel}</p>
-        </div>
-      )}
       <DatePicker
         className={className}
         customInput={customInput}
-        selected={startDate}
-        onChange={(date) => onChangeStartDate(date)}
-        minDate={minDate}
+        selected={selected}
         startDate={startDate}
+        endDate={endDate}
+        ref={ref}
+        onChange={(date) => onChange(date)}
+        minDate={minDate}
         dateFormat={dateFormat}
         withPortal={withPortal}
         locale={ko}
@@ -41,32 +54,11 @@ const Calendar = ({
         timeFormat={timeFormat}
         timeIntervals={timeIntervals}
       />
-      {endDate && (
-        <React.Fragment>
-          <div>
-            <p>{endDateLabel || "-"}</p>
-          </div>
-          <DatePicker
-            className={className}
-            customInput={customInput}
-            selected={endDate}
-            onChange={(date) => onChangeEndDate(date)}
-            minDate={startDate}
-            endDate={endDate}
-            dateFormat={dateFormat}
-            withPortal={withPortal}
-            locale={ko}
-          />
-        </React.Fragment>
-      )}
     </Container>
   );
-};
+});
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-
   .react-datepicker-wrapper {
     width: auto;
   }
